@@ -1,2 +1,2 @@
-# GGXI-TShirt
-GGXI Tshirt Details
+# MNS Kings T-Shirt
+MNS Kings T-shirt details

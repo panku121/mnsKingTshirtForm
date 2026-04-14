@@ -3,158 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GG-XI New T-Shirt Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: white;
-            background-image: repeating-radial-gradient(circle at center center, rgba(230, 46, 11,0.25) 0px, rgba(230, 46, 11,0.25) 1px,transparent 1px, transparent 3px),linear-gradient(45deg, hsl(306,7%,96%) 0%,hsl(306,7%,96%) 78%); background-size: 14px 14px;
-        }
-        .form-container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 400px;
-            width: 100%;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            color: #ffcc00;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="number"], select {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            color: #333;
-        }
-        input[type="text"]::placeholder, input[type="number"]::placeholder {
-            color: #aaa;
-        }
-        .logo {
-            margin-bottom: 20px;
-            max-width: 100px; /* Adjust the logo size */
-            border-radius: 50%;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #ffcc00;
-            border: none;
-            border-radius: 5px;
-            color: black;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #e6b800;
-        }
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 1.5rem;
-            }
-            input[type="text"], input[type="number"], select, input[type="submit"] {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <title>MNS Kings T-Shirt Form</title>
+    <link rel="icon" type="image/png" href="./mnsKings.png">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
-<div class="form-container">
-    <h2>GG-XI New T-Shirt</h2>
-    <form id="cricketForm">
-        <div class="form-group">
-            <label for="playerName">Your Name</label>
-            <input type="text" id="playerName" name="playerName" placeholder="Enter Your Name" required>
+    <section class="neon-card">
+        <div class="logo-wrap">
+            <img src="./mnsKings.png" alt="MNS Kings Logo">
         </div>
-        <div class="form-group">
-            <label for="tShirtSize">T-Shirt Size</label>
-            <select id="tShirtSize" name="tShirtSize" required>
-                <option value="">T-Shirt Size</option>
-                <option value="Small-38">Small (38)</option>
-                <option value="Medium-40">Medium (40)</option>
-                <option value="Large-42">Large (42)</option>
-                <option value="XL-44">XL (44)</option>
-                <option value="XXL-46">XXL (46)</option>
-                <option value="XXL-48">XXXL (48)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="nameOnTShirt">Name on T-Shirt</label>
-            <input type="text" id="nameOnTShirt" name="nameOnTShirt" placeholder="Name on T-Shirt" required>
-        </div>
-        <div class="form-group">
-            <label for="numberOnTShirt">Number on T-Shirt</label>
-            <input type="number" id="numberOnTShirt" name="numberOnTShirt" placeholder="Number on T-Shirt" required>
-        </div>
-        <div class="form-group">
-            <label for="sleeveType">T-Shirt Size</label>
-            <select id="sleeveType" name="sleeveType" required>
-                <option value="">Select Sleeve Type</option>
-                <option value="Half">Half</option>
-                <option value="Full">Full</option>
-            </select>
-        </div>
-        <input type="submit" value="Submit">
-    </form>
-</div>
+        <h1>MNS Kings T-Shirt Form</h1>
+        <p class="subtitle">Please fill all details correctly.</p>
 
-<!-- <script>
-    document.getElementById('cricketForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const playerName = document.getElementById('playerName').value;
-        const tShirtSize = document.getElementById('tShirtSize').value;
-        const nameOnTShirt = document.getElementById('nameOnTShirt').value;
-        const numberOnTShirt = document.getElementById('numberOnTShirt').value;
-        const tShirtLength = document.getElementById('tShirtLength').value;
+        <form id="mnsKingsForm" novalidate>
+            <div class="field">
+                <label for="playerName">Player Name</label>
+                <input type="text" id="playerName" name="playerName" placeholder="Enter player name" maxlength="50" autocomplete="off" required>
+                <div class="error" id="playerNameError"></div>
+            </div>
 
-        const details = {
-            playerName: playerName,
-            tShirtSize: tShirtSize,
-            nameOnTShirt: nameOnTShirt,
-            numberOnTShirt: numberOnTShirt,
-            tShirtLength: tShirtLength
-        };
+            <div class="field">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="10-digit phone number" maxlength="10" required>
+                <div class="error" id="phoneNumberError"></div>
+            </div>
 
-        console.log(details); 
-        alert(`Player Name: ${details.playerName}\nT-Shirt Size: ${details.tShirtSize}\nName on T-Shirt: ${details.nameOnTShirt}\nNumber on T-Shirt: ${details.numberOnTShirt}\nT-Shirt Length: ${details.tShirtLength} inches`);
-        document.getElementById('cricketForm').reset();
-    });
-</script> -->
+            <div class="field">
+                <label for="nameOnTshirt">Name on T-Shirt</label>
+                <input type="text" id="nameOnTshirt" name="nameOnTshirt" placeholder="Print name on jersey" maxlength="15" required>
+                <div class="error" id="nameOnTshirtError"></div>
+            </div>
 
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzBoXGhoQguFyMe7KJzH62bDl4-eYJ1BA1aVf8UQcSZhVEOpo5R9fdUkYeQnxL-SAyN/exec';
-    const form = document.getElementById('cricketForm')
-    console.log("🚀 -->> form:", form)
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => alert( "Thank you!" + ' ' + `${document.getElementById('playerName').value}` + ' ' + "Your form is submitted successfully."))
-            .then(() => { window.location.reload(); })
-            .catch(error => console.error('Error!', error.message))
-    })
-</script>
+            <div class="field">
+                <label for="tshirtSize">T-Shirt Size</label>
+                <select id="tshirtSize" name="tshirtSize" required>
+                    <option value="">Select size</option>
+                    <option value="S (38)">S (38)</option>
+                    <option value="M (40)">M (40)</option>
+                    <option value="L (42)">L (42)</option>
+                    <option value="XL (44)">XL (44)</option>
+                    <option value="XXL (46)">XXL (46)</option>
+                    <option value="3XL (48)">3XL (48)</option>
+                </select>
+                <div class="error" id="tshirtSizeError"></div>
+            </div>
 
+            <div class="field">
+                <label for="numberOnBack">Number on Back</label>
+                <input type="text" id="numberOnBack" name="numberOnBack" placeholder="e.g. 001, 07, 700" inputmode="numeric" maxlength="3" autocomplete="off" required>
+                <div class="error" id="numberOnBackError"></div>
+            </div>
+
+            <div class="field">
+                <label for="sleeveLength">Sleeve Length</label>
+                <select id="sleeveLength" name="sleeveLength" required>
+                    <option value="">Select sleeve length</option>
+                    <option value="Half Sleeve">Half Sleeve</option>
+                    <option value="Full Sleeve">Full Sleeve</option>
+                </select>
+                <div class="error" id="sleeveLengthError"></div>
+            </div>
+
+            <div class="actions">
+                <button id="submitBtn" type="submit">Submit Entry</button>
+            </div>
+            <div class="status" id="statusMessage"></div>
+        </form>
+    </section>
+    <script src="./script.js"></script>
 </body>
 </html>

@@ -1,0 +1,209 @@
+:root {
+    --bg-dark: #0f0906;
+    --card-bg: rgba(26, 14, 8, 0.86);
+    --brand-gold: #f2c15f;
+    --brand-gold-soft: #ffe3a4;
+    --brand-red: #c63b2f;
+    --text-main: #fff4de;
+    --text-muted: #d5b98a;
+    --field-bg: rgba(36, 19, 10, 0.9);
+    --danger: #ff8f86;
+    --success: #81f0b4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 13% 12%, rgba(198, 59, 47, 0.28), transparent 40%),
+        radial-gradient(circle at 88% 85%, rgba(242, 193, 95, 0.2), transparent 44%),
+        linear-gradient(145deg, #110906, #261207 48%, #120905);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+}
+
+.neon-card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--card-bg);
+    border: 1px solid rgba(242, 193, 95, 0.48);
+    border-radius: 24px;
+    padding: 14px 16px;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 0 20px rgba(242, 193, 95, 0.32),
+        0 0 44px rgba(198, 59, 47, 0.22),
+        inset 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.logo-wrap {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.logo-wrap img {
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(242, 193, 95, 0.9);
+    box-shadow:
+        0 0 16px rgba(242, 193, 95, 0.78),
+        0 0 24px rgba(198, 59, 47, 0.35);
+    animation: logoFloat 3.2s ease-in-out infinite;
+}
+
+h1 {
+    margin: 6px 0 6px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+    text-shadow:
+        0 0 8px rgba(242, 193, 95, 0.75),
+        0 0 20px rgba(198, 59, 47, 0.55);
+}
+
+.subtitle {
+    margin: 0 0 10px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+form {
+    display: grid;
+    gap: 7px;
+}
+
+.field {
+    display: grid;
+    gap: 4px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+input,
+select {
+    width: 100%;
+    border: 1px solid rgba(242, 193, 95, 0.4);
+    background: var(--field-bg);
+    color: var(--text-main);
+    border-radius: 10px;
+    padding: 9px 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--brand-gold);
+    box-shadow: 0 0 14px rgba(242, 193, 95, 0.35);
+}
+
+input::placeholder {
+    color: #b7925e;
+}
+
+.error {
+    min-height: 14px;
+    font-size: 0.79rem;
+    color: var(--danger);
+}
+
+.actions {
+    margin-top: 2px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #231105;
+    background: linear-gradient(90deg, #f6ca71, #ffd88f, #f3b84f);
+    box-shadow: 0 0 16px rgba(242, 193, 95, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow:
+        0 0 18px rgba(242, 193, 95, 0.85),
+        0 0 30px rgba(198, 59, 47, 0.35);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.status {
+    min-height: 22px;
+    margin-top: 2px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status.success {
+    color: var(--success);
+    text-shadow: 0 0 8px rgba(82, 245, 173, 0.55);
+}
+
+.status.error {
+    color: var(--danger);
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow:
+            0 0 14px rgba(242, 193, 95, 0.75),
+            0 0 20px rgba(198, 59, 47, 0.25);
+    }
+    50% {
+        transform: translateY(-4px);
+        box-shadow:
+            0 0 18px rgba(242, 193, 95, 0.92),
+            0 0 28px rgba(198, 59, 47, 0.38);
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 14px;
+        align-items: center;
+    }
+
+    .neon-card {
+        margin: 0;
+        padding: 13px 11px 10px;
+        border-radius: 18px;
+        max-height: calc(100vh - 28px);
+        overflow-y: auto;
+    }
+
+    .logo-wrap img {
+        width: 100px;
+        height: 100px;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+    }
+}
